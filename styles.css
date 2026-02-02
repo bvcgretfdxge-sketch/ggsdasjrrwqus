@@ -94,6 +94,12 @@ main {
   align-items: end;
 }
 
+.panel-intro {
+  margin: 12px 0 18px;
+  color: #c2d2ff;
+  line-height: 1.5;
+}
+
 label {
   display: grid;
   gap: 6px;
@@ -217,10 +223,8 @@ button:hover {
 
 .status {
   margin: 14px 0 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
+  gap: 10px;
 }
 
 .state-label {
@@ -244,6 +248,43 @@ button:hover {
   background: linear-gradient(90deg, #42ff9a, #2b78ff);
 }
 
+.meters {
+  display: grid;
+  gap: 8px;
+}
+
+.meter {
+  display: grid;
+  gap: 4px;
+}
+
+.meter-label {
+  font-size: 0.7rem;
+  color: #9fb9ff;
+}
+
+.mp {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(108, 126, 181, 0.2);
+  overflow: hidden;
+}
+
+.mp-bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #59d1ff, #7f8bff);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #9fb9ff;
+  margin-bottom: 10px;
+}
+
 .actions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -261,6 +302,12 @@ button:hover {
 
 .actions button:hover {
   background: rgba(68, 112, 196, 0.9);
+}
+
+.actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  background: rgba(30, 52, 94, 0.4);
 }
 
 .character-card[data-state="attack"] {

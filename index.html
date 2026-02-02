@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sonic RPG por turnos</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
   <div class="app">
@@ -30,7 +30,10 @@
 
     <main>
       <section class="panel create-panel">
-        <h2>Crear personaje</h2>
+          <h2>Crear personaje</h2>
+          <p class="panel-intro">
+            Diseña tu equipo con animaciones de curar, idle y attack. Cada personaje tiene HP/MP para un combate tipo Final Fantasy.
+          </p>
         <form id="character-form">
           <label>
             Nombre
@@ -102,9 +105,24 @@
       </header>
       <div class="status">
         <span class="state-label">idle</span>
-        <div class="hp">
-          <div class="hp-bar"></div>
+        <div class="meters">
+          <div class="meter">
+            <span class="meter-label">HP</span>
+            <div class="hp">
+              <div class="hp-bar"></div>
+            </div>
+          </div>
+          <div class="meter">
+            <span class="meter-label">MP</span>
+            <div class="mp">
+              <div class="mp-bar"></div>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="stats">
+        <span class="stat hp-text">HP 100/100</span>
+        <span class="stat mp-text">MP 50/50</span>
       </div>
       <div class="actions">
         <button data-action="attack">Attack</button>
@@ -114,6 +132,6 @@
     </article>
   </template>
 
-  <script src="script.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
