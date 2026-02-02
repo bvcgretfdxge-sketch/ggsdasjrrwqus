@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sonic RPG por turnos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Sonic RPG · Estilo Final Fantasy por turnos</p>
+        <h1>Batalla a velocidad supersónica</h1>
+        <p class="subtitle">
+          Agrega tus personajes, define sus animaciones (curar, idle, attack) y organiza equipos para 2 jugadores.
+        </p>
+      </div>
+      <div class="player-icons">
+        <div class="player-card">
+          <span class="player-label">Jugador 1</span>
+          <span class="player-icon">🦔</span>
+        </div>
+        <div class="player-card">
+          <span class="player-label">Jugador 2</span>
+          <span class="player-icon">⚡</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel create-panel">
+        <h2>Crear personaje</h2>
+        <form id="character-form">
+          <label>
+            Nombre
+            <input type="text" name="name" placeholder="Sonic, Tails, Shadow..." required />
+          </label>
+          <label>
+            Equipo
+            <select name="team">
+              <option value="1">Jugador 1</option>
+              <option value="2">Jugador 2</option>
+            </select>
+          </label>
+          <label>
+            Icono
+            <input type="text" name="icon" maxlength="2" placeholder="🌀" />
+            <span class="hint">Puedes usar emoji o una letra.</span>
+          </label>
+          <label>
+            Clase
+            <select name="role">
+              <option value="Velocista">Velocista</option>
+              <option value="Soporte">Soporte</option>
+              <option value="Guerrero">Guerrero</option>
+              <option value="Táctico">Táctico</option>
+            </select>
+          </label>
+          <button type="submit">Agregar personaje</button>
+        </form>
+      </section>
+
+      <section class="panel arena">
+        <div class="arena-header">
+          <h2>Arena</h2>
+          <div class="turn-indicator">
+            <span>Turno actual:</span>
+            <strong id="turn-label">Jugador 1</strong>
+          </div>
+        </div>
+        <div class="teams">
+          <div class="team" data-team="1">
+            <h3>Equipo Jugador 1</h3>
+            <div class="characters" id="team-1"></div>
+          </div>
+          <div class="team" data-team="2">
+            <h3>Equipo Jugador 2</h3>
+            <div class="characters" id="team-2"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel log-panel">
+        <div class="log-header">
+          <h2>Bitácora de batalla</h2>
+          <button id="next-turn">Siguiente turno</button>
+        </div>
+        <ul id="battle-log"></ul>
+      </section>
+    </main>
+  </div>
+
+  <template id="character-template">
+    <article class="character-card" data-state="idle">
+      <header>
+        <div class="character-icon"></div>
+        <div>
+          <h4 class="character-name"></h4>
+          <p class="character-role"></p>
+        </div>
+      </header>
+      <div class="status">
+        <span class="state-label">idle</span>
+        <div class="hp">
+          <div class="hp-bar"></div>
+        </div>
+      </div>
+      <div class="actions">
+        <button data-action="attack">Attack</button>
+        <button data-action="heal">Curar</button>
+        <button data-action="idle">Idle</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
